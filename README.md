@@ -10,14 +10,14 @@ check my sample if you are loss
 ###1
 
 ```bash
-npm -g json-server
+npm install -g json-server
 ```
 
 
 ###2
 
 ```bash
-npm i
+npm install
 ```
 
 ###3
@@ -31,7 +31,7 @@ http://localhost:3000/comments
 ###4
 
 ```bash
-npm start
+npm start --port 3001
 
 server running
 http://localhost:3001/

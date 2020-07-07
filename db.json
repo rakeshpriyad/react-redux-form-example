@@ -7,5 +7,41 @@
     }
   ],
   "comments": [
+    {
+      "corporateName": "dsaf",
+      "userName": "sasdf",
+      "userNameKana": "ssadf",
+      "mailAddress": "dsaf@dsaf.d",
+      "tel": "654",
+      "content": "asdf",
+      "id": 1
+    },
+    {
+      "corporateName": "sadf",
+      "userName": "asdf",
+      "userNameKana": "safd",
+      "mailAddress": "dsaf@saf.dsaf",
+      "tel": "6545",
+      "content": "5654",
+      "id": 2
+    },
+    {
+      "corporateName": "sdaf",
+      "userName": "sadf",
+      "userNameKana": "sadf",
+      "mailAddress": "sdaf@sadf.com",
+      "tel": "654564",
+      "content": "asdfasd",
+      "id": 3
+    },
+    {
+      "corporateName": "sdf",
+      "userName": "dsadf",
+      "userNameKana": "sadf",
+      "mailAddress": "asdf@dsdsa.com",
+      "tel": "6546554",
+      "content": "sdaf",
+      "id": 4
+    }
   ]
 }
