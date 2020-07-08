@@ -8,6 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import reducers from './reducers/index';
 import { rootSaga } from './sagas/sagas';
+import { userSaga } from './sagas/userSaga';
 
 
 const defaultState = {};
@@ -15,6 +16,7 @@ const sagaMiddlware = createSagaMiddleware();
 let store = createStore(reducers, defaultState, applyMiddleware(sagaMiddlware));
 
 sagaMiddlware.run(rootSaga);
+sagaMiddlware.run(userSaga);
 
 // export const history = syncHistoryWithStore(browseerHistory, store);
 

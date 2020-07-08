@@ -6,10 +6,10 @@ import {FormLabel} from '../FormLabel';
 
 import 'object-assign';
 
-const submit = ({corporateName = '', userName='', userNameKana='', mailAddress='', tel='', content='' }, submitAction, reset) => {
+const submit = ({corporateName = '', userName='', userNameKana='', mailAddress='', tel='', content='' }, submitActionx, reset) => {
     let error = {};
     let isError = false;
-    if(corporateName.trim() === '') {
+    /*if(corporateName.trim() === '') {
         error.corporateName = 'Rakesh';
         isError = true;
     }
@@ -40,14 +40,14 @@ const submit = ({corporateName = '', userName='', userNameKana='', mailAddress='
     if (mailAddress.trim() === '') {
         error.mailAddress = 'Email';
         isError = true;
-    }
+    }*/
     if (isError) {
         console.log(isError, 'Error ');
         throw new SubmissionError(error);
 
     } else {
         console.log(isError, 'Error');
-        submitAction({corporateName, userName, userNameKana, mailAddress, tel, content});
+        submitActionx({corporateName, userName, userNameKana, mailAddress, tel, content});
        // window.alert(`Data:\n\n${JSON.stringify({corporateName, userName, userNameKana, mailAddress, tel, content}, null, 2)}`)
         reset();
     }

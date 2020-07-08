@@ -1,37 +1,40 @@
 import React from 'react';
 import { Field, reduxForm, SubmissionError} from 'redux-form';
 import {FormLabel} from '../FormLabel';
-
+import '../../App.css';
 
 
 import 'object-assign';
 
-const submit = ({userName='', emailAddress='', mobileNo='', address='' }, submitAction, reset) => {
+const submit = ({userName='', emailAddress='', mobileNo='', address='' }, submitUserActionx, reset) => {
     let error = {};
     let isError = false;
-    
+ /*   
     if(userName.trim() === '') {
-        error.userName = 'Rakesh';
+        error.userName = 'User Name is mandatory field';
         isError = true;
     }
-    
+    if(mobileNo.trim() === '') {
+        error.mobileNo = 'Mobile no# is mandatory field';
+        isError = true;
+    }
 
     if (address.trim() === '') {
-        error.content = 'Error';
+        error.address = 'Address is mandatory field';
         isError = true;
     }
 
     if (emailAddress.trim() === '') {
-        error.mailAddress = 'Email';
+        error.emailAddress = 'Email is mandatory field';
         isError = true;
-    }
+    } */
     if (isError) {
         console.log(isError, 'Error ');
         throw new SubmissionError(error);
 
     } else {
-        console.log(isError, 'Error');
-        submitAction({userName, emailAddress, mobileNo, address});
+        console.log(' isError', isError);
+        submitUserActionx({userName, emailAddress, mobileNo, address});
         window.alert(`Data:\n\n${JSON.stringify({userName, emailAddress, mobileNo, address}, null, 2)}`)
        // reset();
     }
@@ -52,8 +55,8 @@ const renderField = ({type,placeholder,  label, input,  meta: {touched, error}})
 </span>
 );
 
-const UserFormFunc = ({asyncValidating, handleSubmit, submitAction,  pristine, submitting, reset}) => (
-<form onSubmit={handleSubmit((fields) => submit(fields, submitAction, reset))} id='form1' className='mLabForm'>
+const UserFormFunc = ({asyncValidating, handleSubmit, submitUserAction,  pristine, submitting, reset}) => (
+<form onSubmit={handleSubmit((fields) => submit(fields, submitUserAction, reset))} id='form1' className='mLabForm'>
     <div className='form-row'>
     <FormLabel labelName={'User Name'} fieldName={'User Name'} isRequire={true} />
     <Field component={renderField} type='text' placeholder='User Name' name='userName' id='userName' />
@@ -68,7 +71,7 @@ const UserFormFunc = ({asyncValidating, handleSubmit, submitAction,  pristine, s
     <Field component={renderField} type='number' placeholder='0800000000' name='mobileNo' id='mobileNo' />
     </div>
     <div className='form-row'>
-    <FormLabel labelName={'Address '} fieldName={'address'} isRequire={true} />
+    <FormLabel labelName={'Address '} fieldName={'Address'} isRequire={true} />
     <Field component={renderField} type='text' placeholder='Address' name='address' id='address' />
     </div>
     <div className={`submitBtn u-mt30 u-mb80`}>

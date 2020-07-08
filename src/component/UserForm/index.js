@@ -1,6 +1,6 @@
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../actions/submitAction';
+import * as actionCreators from '../../actions/submitUserAction';
 import UserForm from './UserForm';
 
 function mapStateToProps(state) {
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    console.log(actionCreators)
+    console.log("-----USER--"+actionCreators)
     return bindActionCreators(actionCreators, dispatch);
 }
 
