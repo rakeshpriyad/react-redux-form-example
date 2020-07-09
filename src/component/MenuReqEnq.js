@@ -10,20 +10,17 @@ import {
 } from 'material-ui-popup-state/hooks'
 
 
-const MenuPopup = () => {
+const MenuReqEnq = () => {
   const popupStateHome = usePopupState({ variant: 'popover', popupId: 'homeMenu' })
-  const popupStateBranch = usePopupState({ variant: 'popover', popupId: 'branchMenu' })
   const about = () => {
     console.log("About");
     popupStateHome.close();
   }
   return (
     <React.Fragment>
+      
       <Button variant="contained" {...bindHover(popupStateHome)}>
-        Home
-      </Button>
-      <Button variant="contained" {...bindHover(popupStateBranch)}>
-        Home1
+        Request and Enquiry
       </Button>
       <Menu
         {...bindMenu(popupStateHome)}
@@ -32,24 +29,15 @@ const MenuPopup = () => {
         transformOrigin={{ vertical: 'top', horizontal: 'left' }}
       >
         <MenuItem onClick={about}>
-          <NavLink to="/" style={{textDecoration: 'none'}}>About Us</NavLink>
+          <NavLink to="/" style={{textDecoration: 'none'}}>Account Summary</NavLink>
         </MenuItem>
         <MenuItem onClick={popupStateHome.close}>
-            <NavLink to="/User" style={{textDecoration: 'none'}}>User</NavLink>
+            <NavLink to="/User" style={{textDecoration: 'none'}}>Account Statement</NavLink>
         </MenuItem>
-      </Menu>
-      <Menu
-        {...bindMenu(popupStateBranch)}
-        getContentAnchorEl={null}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-      >
-        <MenuItem onClick={popupStateBranch.close}>Branch</MenuItem>
-        <MenuItem onClick={popupStateBranch.close}>Branch Address</MenuItem>
       </Menu>
     </React.Fragment>
     
   )
 }
 
-export default MenuPopup
+export default MenuReqEnq

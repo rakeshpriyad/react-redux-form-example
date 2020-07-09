@@ -20,6 +20,7 @@ function* callSubmit(action){
     let errors = {};
     const result = yield call(submitToServer, action.data);
     if(result.errors){
+        console.log("Error occured : "+ result.errors)
         yield put({ type: 'ADD_USER_FAILED', errors: result.errors});
     } else {
        yield put({ type: 'ADD_USER_SUCCESSFULL'});
