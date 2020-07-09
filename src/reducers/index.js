@@ -5,7 +5,7 @@ import {default as reduxSaga} from "./reducer"
 
 const reducers =  combineReducers({
     routing: routerReducer,
-    reduxSaga:reduxSaga,
+    reduxSaga: reduxSaga,
     form:  formReducer
 });
 
