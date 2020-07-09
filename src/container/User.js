@@ -19,7 +19,7 @@ export class User extends Component {
                 <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} >
                 
                 <div class="row">
-                <div class="column"></div>
+                <div class="column">x</div>
                 <div class="column"><UserForm /></div>
                 <div class="column"></div>
                 </div>

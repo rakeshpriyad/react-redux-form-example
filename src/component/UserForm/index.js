@@ -1,6 +1,8 @@
 import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../../actions/submitUserAction';
+//import * as actionCreators from '../../actions/submitUserAction';
+import * as actionCreators from '../../actions/loadUserAction';
+
 import UserForm from './UserForm';
 
 function mapStateToProps(state) {

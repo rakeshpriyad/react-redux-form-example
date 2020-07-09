@@ -43,6 +43,13 @@ const submit = ({userName='', emailAddress='', mobileNo='', address='' }, submit
     })
   }
 
+  const load = (submitLoadUserAction, reset) => {
+    return sleep(1000).then(() => {
+          console.log('Calling load');
+          submitLoadUserAction();
+    })
+  }
+
 
 /*const renderFieldTextarea = ({type, placeholder,label, input, textarea, meta: {touched, error}}) => (
 <span className='field'>
@@ -58,7 +65,7 @@ const renderField = ({type,placeholder,  label, input,  meta: {touched, error}})
 </span>
 );
 
-const UserFormFunc = ({asyncValidating, handleSubmit, submitUserAction,  pristine, submitting, reset}) => (
+const UserFormFunc = ({asyncValidating, handleSubmit, submitUserAction,submitLoadUserAction,  pristine, submitting, reset}) => (
 <form onSubmit={handleSubmit((fields) => submit(fields, submitUserAction, reset))} id='form1' className='mLabForm'>
     <div className='form-row'>
     <FormLabel labelName={'User Name'} fieldName={'User Name'} isRequire={true} />
@@ -80,7 +87,11 @@ const UserFormFunc = ({asyncValidating, handleSubmit, submitUserAction,  pristin
     <div className={`submitBtn u-mt30 u-mb80`}>
         <button type='submit'>Submit</button>
     </div>
+    <div className={`submitBtn u-mt30 u-mb80`}>
+        <button type='button' onClick={() => load(submitLoadUserAction, reset)}>Load</button>
+    </div>
     </form>
+
 )
 
 const UserForm = reduxForm({
